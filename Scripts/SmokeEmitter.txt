@@ -1,0 +1,1 @@
+Note, to keep the scene hierarchy from overflowing, create an empty GameObject called SmokeParent.
