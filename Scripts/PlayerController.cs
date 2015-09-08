@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
 	public float speed;
 	public GameObject grenadePrefab;
+	public Text text;
 
 	private float lastGrenadeTime;
 
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 			DropGrenade ();
 			lastGrenadeTime = Time.time;
 		}
+		text.text = string.Format("{0,5:N1}%",((Time.time - lastGrenadeTime > 3.0f) ? 100.0f : (Time.time - lastGrenadeTime) * 100 / 3));
 	}
 
 	private void DropGrenade(){
